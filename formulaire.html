@@ -7,30 +7,42 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<button><a href="http://localhost:7000/index.html">accueil</a></button>
+	<button><a href="http://localhost:7000/index.html">accueil</a></button>
 	<div><h1>ADD CLIENTS</h1></div>
 
-	<form action="/public" class="ui form" method="put" id="edited">
+	<form action="/public" class="ui form" method="post" id="edited">
 		<div class="field">
-			<label for="prenom">Prénom</label>
-			<input type="text" id="prenom" name="prenom" value="Fred">
+			<label for="id"></label>
+			<input type="hidden" id="id" name="id" value="">
 		</div>
 		<div class="field">
-			<label for="nom">Nom</label>
-			<input type="text" id="nom" name="nom" value="delon">
+			<label for="first_name">Prénom</label>
+			<input type="text" id="prenom" name="first_name" value="Fred">
+		</div>
+		<div class="field">
+			<label for="last_name">Nom</label>
+			<input type="text" id="last_name" name="last_name" value="delon">
+		</div>
+		<div class="field">
+			<label for="company">Company</label>
+			<input type="text" id="company" name="company" value="aucoin2larue">
+		</div>
+		<div class="field">
+			<label for="role">Role</label>
+			<input type="text" id="role" name="role" value="testeur du turfu">
 		</div>
 		<div class="field">
 			<label for="phone">Tel</label>
 			<input type="text" id="phone" name="phone" value="06">
 		</div>
 		<div class="field">
-			<label for="mail">Email</label>
-			<input type="text" id="mail" name="mail" value="boby@gou.fr">
+			<label for="email">Email</label>
+			<input type="text" id="email" name="email" value="boby@gou.fr">
 		</div>
 		<div class="field">
-			<label for="content">Description</label>
-			<textarea name="content" id="content" cols="30" rows="10">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem eius, accusantium animi tempora, inventore soluta, mollitia illo necessitatibus quod ullam incidunt quisquam itaque eligendi dignissimos saepe totam laudantium voluptates alias.
+			<label for="description">Description</label>
+			<textarea name="description" id="description" cols="30" rows="10">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem eius, accusantium animi tempora, inventore soluta, mollitia illo necessitatibus quod ullam incidunt quisquam itaque eligendi dignissimos saepe totam laudantium voluptates alias.
 			</textarea>
 		</div>
 		<button class="ui button green labeled icon">

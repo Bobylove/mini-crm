@@ -13,9 +13,12 @@ app.post('/public', function(req, res){
 
 	fs.readFile(crmPath, 'utf8', function(err, data){
 		
-		var content = JSON.parse(data); 
+		var content = JSON.parse(data);
+		var idLen = content.customers[content.customers.length-1].id;
+		var nbID = idLen+1;
+		
 
-		content.customers.push({first_name:post.first_name, last_name:post.last_name,phone:post.phone,email:post.email,description:post.description});
+		content.customers.push({id:nbID,first_name:post.first_name, last_name:post.last_name,company:post.company,role:post.role,phone:post.phone,email:post.email,description:post.description});
 		var jsonified = JSON.stringify(content);
 
 		fs.writeFile(crmPath, jsonified, function(err){

@@ -3,13 +3,12 @@ $(document).ready(function(){
 
 	var me = {
 		html:null,
-		id:null,
 		json:'http://localhost:7000/public/crm.json',
 
 		init: function(){
 			//Débute le script !
 			me.jsonAfficher();
-			$('form').on('submit', this.formulaireRécupe.bind(this));
+			// $('form').on('submit', this.formulaireRécupe.bind(this));
 		},
 		jsonAfficher: function(){
 			// Affiche les infos du fichier "crm.json" dans la page index.html ( boucle ?)
@@ -21,28 +20,29 @@ $(document).ready(function(){
 				}
 			});
 		},
-		formulaireRécupe: function(event){
-			//stocké les information du formulaire
-			event.preventDefault();
-			var prenom = $("#prenom").val();
-			var nom = $("#nom").val();
-			var phone = $("#phone").val();
-			var mail = $("#mail").val();
-			var content = $("#content").val();
-			this.formulaireToJson({first_name:prenom, last_name:nom, phone:phone, email:mail, description:content});
-		},
-		formulaireToJson: function(data){
-			// ajouté dans le fichier " crm.json " 
-			$.ajax({
-				type:"POST",
-				url:$("form").attr("action"),
-				data: data,
-				success : this.success
-			})
-		},
-		success: function(){
-			alert("save client !");
-		},
+		// formulaireRécupe: function(event){
+		// 	//stocké les information du formulaire
+		// 	event.preventDefault();
+		// 	var prenom = $("#prenom").val();
+		// 	var nom = $("#nom").val();
+		// 	var phone = $("#phone").val();
+		// 	var mail = $("#mail").val();
+		// 	var content = $("#content").val();
+			// this.formulaireToJson({first_name:prenom, last_name:nom, phone:phone, email:mail, description:content});
+		// },
+		// formulaireToJson: function(data){
+		// 	// ajouté dans le fichier " crm.json " 
+		// 	$.ajax({
+		// 		type:"POST",
+		// 		url:$("form").attr("action"),
+		// 		data: data,
+		// 		success : this.success
+		// 	})
+		// },
+		// success: function(){
+		// 	alert("save client !");
+		// },
+		
 	}
 	me.init();
 		});   // end of code
